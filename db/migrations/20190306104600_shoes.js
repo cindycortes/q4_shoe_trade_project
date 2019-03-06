@@ -5,9 +5,9 @@ exports.up = function(knex, Promise) {
       table.string('type');
       table.string('color');
       table.string('brand');
-      table.decimal('msrp');
+      table.integer('msrp');
       table.string('name');
-      table.string('gender');
+      
   })
 };
 
