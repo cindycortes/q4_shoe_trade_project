@@ -14,12 +14,7 @@ exports.up = function(knex, Promise) {
         .inTable('shoes')
         .onDelete('CASCADE')
         .index(); 
-      table.integer('shoe_size')
-        .notNullable()
-        .references('shoe_size')
-        .inTable('users')
-        .onDelete('CASCADE')
-        .index();  
+      table.integer('shoe_size') 
       table.boolean('isSelling')
       table.integer('price')
       table.integer('purchased_price')
