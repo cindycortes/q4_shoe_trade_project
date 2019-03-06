@@ -10,7 +10,9 @@ module.exports = {
 
     getUserCollection(req, res) {
         knex('user_shoes')
-            .where('id', req.params.id)
+            .join('shoes')
+            .where('user_shoes.shoe_id', "=", "shoes.id")
+            .where('user_shoes.user_id', req.params.id)
             .then(userShoes => res.json(userShoes))
     },
 
@@ -24,15 +26,15 @@ module.exports = {
 
 
     shoeForSale(req, res) {
-        knex('user_shoes') // or shoes table?
-            .where('id', req.params.id)
+        knex('user_shoes') 
+            .where('id', req.params.id) // users shoes entry
             .update(req.body)
             .returning('*')
             .then(updatedShoeSale => res.json(updatedShoeSale))
     },
 
     purchase(req, res) {
-        knex('shoes')
+        knex('user_shoes') 
             .where('id', req.params.id)
             .update(req.body)
             .returning('*')

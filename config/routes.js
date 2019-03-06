@@ -8,7 +8,7 @@ router.get('/shoes', shoes.getAllShoes) // list all shoes of size/type/etc
 router.get('/shoes/:id', shoes.getUserCollection) // view users' shoe collection
 router.post('/shoes', shoes.addShoe) // add shoe to DB
 router.patch('/shoes/:id', shoes.shoeForSale) // post shoe for sale
-router.patch('/shoes/purchase', shoes.purchase) // buy shoe
+router.patch('/shoes/:id/purchase', shoes.purchase) // buy shoe
 router.delete('/shoes/:id', shoes.delete) // remove shoe from collection w/o selling
 
 
