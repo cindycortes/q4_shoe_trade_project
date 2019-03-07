@@ -6,8 +6,6 @@ exports.seed = function(knex, Promise) {
   return knex('shoes').del()
     .then(function () {
       // Inserts seed entries
-      return knex('shoes').insert([
-        { smallData }
-      ]);
+      return knex('shoes').insert(smallData);
     });
 };

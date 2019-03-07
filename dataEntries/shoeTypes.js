@@ -32,4 +32,6 @@ let shoes = readCSV().data
       })
     })
 
+
+
 module.exports = smallData
