@@ -12,7 +12,7 @@ const readCSV = ()=>{
 let shoes = readCSV().data
 
 
-    let smallData = shoes.map(shoe=>{
+    let smallData = shoes.map(shoe => {
       return {
         brand: shoe.brand,
         colors: shoe.colors,
