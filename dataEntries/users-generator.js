@@ -19,4 +19,4 @@ function createUsers() {
     return fakeUsers
 }
 
-module.exports = fakeUsers
+module.exports = createUsers

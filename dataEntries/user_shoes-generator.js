@@ -18,12 +18,12 @@ function makeTransactions() {
         user_id: userID,
         shoe_id: shoeID,
         shoe_size: shoeSize[Math.floor(Math.random() * 6)],
-        price: sellingPrice[Math.floor(Math.random() * 9)],
-        purchase_price: cost[Math.floor(Math.random() * 9)],
         isSelling: randomBoolean,
-        date: parseInt(moment(date).format('YYYYMMDD'))
+        price: sellingPrice[Math.floor(Math.random() * 9)],
+        purchased_price: cost[Math.floor(Math.random() * 9)],
+        purchased_date: parseInt(moment(date).format('YYYYMMDD'))
     })
     return transData
 }
  
-module.exports = transData
+module.exports = makeTransactions
