@@ -16,7 +16,6 @@ module.exports = {
             .then(userShoes => res.json(userShoes))
     },
 
-
     addShoe(req, res) {
         knex('shoes')
             .insert(req.body)
