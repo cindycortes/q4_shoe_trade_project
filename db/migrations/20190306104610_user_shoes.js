@@ -3,11 +3,6 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('user_shoes', table => {
       table.increments();
       table.integer('user_id')
-        .notNullable()
-        .references('id')
-        .inTable('users')
-        .onDelete('CASCADE')
-        .index();
       table.integer('shoe_id')
       table.integer('shoe_size')
       table.boolean('isSelling')

@@ -10,8 +10,7 @@ module.exports = {
 
     getUserCollection(req, res) {
         knex('user_shoes')
-            .join('shoes')
-            .where('user_shoes.shoe_id', "=", "shoes.id")
+            .join('shoes','user_shoes.shoe_id', "=", "shoes.id")
             .where('user_shoes.user_id', req.params.id)
             .then(userShoes => res.json(userShoes))
     },

@@ -4,7 +4,7 @@ const fs = require('fs')
 
 
 const readCSV = ()=>{
-  let string = fs.readFileSync('/home/nancy/GithubStuff/q4_shoe_trade_project/dataEntries/womens-shoes-prices/Datafiniti_Womens_Shoes.csv', 'utf-8')
+  let string = fs.readFileSync('./dataEntries/womens-shoes-prices/Datafiniti_Womens_Shoes.csv', 'utf-8')
   let shoeJSONAll = papa.parse(string, {header:true})
   return shoeJSONAll
 }
