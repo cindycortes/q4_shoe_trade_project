@@ -2,12 +2,12 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('shoes', table => {
       table.increments();
-      table.string('type');
-      table.string('color');
+      table.text('image_url');
+      table.text('colors');
       table.string('brand');
       table.integer('msrp');
-      table.string('name');
-      
+      table.text('name');
+
   })
 };
 

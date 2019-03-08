@@ -9,16 +9,11 @@ exports.up = function(knex, Promise) {
         .onDelete('CASCADE')
         .index();
       table.integer('shoe_id')
-        .notNullable()
-        .references('id')
-        .inTable('shoes')
-        .onDelete('CASCADE')
-        .index(); 
-      table.integer('shoe_size') 
+      table.integer('shoe_size')
       table.boolean('isSelling')
       table.integer('price')
       table.integer('purchased_price')
-      table.integer('purchased_date')     
+      table.integer('purchased_date')
   })
 };
 

@@ -4,7 +4,7 @@ const fs = require('fs')
 
 
 const readCSV = ()=>{
-  let string = fs.readFileSync('./womens-shoes-prices/Datafiniti_Womens_Shoes.csv', 'utf-8')
+  let string = fs.readFileSync('/home/nancy/GithubStuff/q4_shoe_trade_project/dataEntries/womens-shoes-prices/Datafiniti_Womens_Shoes.csv', 'utf-8')
   let shoeJSONAll = papa.parse(string, {header:true})
   return shoeJSONAll
 }
@@ -16,9 +16,9 @@ let shoes = readCSV().data
       return {
         brand: shoe.brand,
         colors: shoe.colors,
-        image_url: shoe.imageURLs,
+        image_url: shoe.imageURLs.split().splice(shoe.imageURLs.indexOf(','), 1).toString(),
         name: shoe.name,
-        msrp: shoe[`prices.amountMax`]
+        msrp: parseInt(shoe[`prices.amountMax`])
       }
     })
     smallData.forEach((shoe, i, arr)=>{
